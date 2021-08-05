@@ -15,14 +15,21 @@ var double_var = double;
 
 console.log(double(30));
 */
+
 // Composition functions are little functions into bigger functions
+
+// Array of animals
 var animals = [
     {name: 'Kira', species: 'Dog'},
     {name: 'Sierra', species: 'Dog'},
+    {name: 'Hunter', species: 'Dog'},
     {name: 'Nemo', species: 'Fish'},
     {name: 'Sapito', species: 'Frog'},
     {name: 'Tugi', species: 'Turtle'},
     {name: 'Tuga', species: 'Turtle'},
+    {name: 'Donatello', species: 'Turtle'},
+    {name: 'King Kong', species: 'Monkey'},
+    {name: 'Godzilla', species: 'Lizard'},
 ];
 
 // push functions
