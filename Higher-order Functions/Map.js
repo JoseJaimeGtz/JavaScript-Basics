@@ -29,6 +29,5 @@ const names = animals.map(function(a){
 console.log("names: ", names);
 
 // solved by map function with arrow func
-
 const names2 = animals.map(a => a.name);
 console.log("names2: ", names2);
