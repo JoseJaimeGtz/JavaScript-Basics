@@ -30,62 +30,53 @@ const inicialize = () => {
     dName();
 }
 inicialize();
-/*
+
 // Counter function
-function makeCounter() {
+/*function makeCounter() {
     var privateCounter = 0;
     function changeBy(val) {
         privateCounter += val;
-        return {
-            increment: function() { return changeBy(1) },
-            decrement: function() { return changeBy(-1) },
-            value: function() { return privateCounter; }
-        }
+    }
+    return {
+        increment: function () { return changeBy(1) },
+        decrement: function () { return changeBy(-1) },
+        value: function () { return privateCounter }
     }
 };
-
 var counter1 = makeCounter();
 
 counter1.increment();
 counter1.increment();
+console.log("Counter1: ", counter1.value());
 counter1.increment();
-
+console.log("Counter1: ", counter1.value());
+counter1.decrement();
+counter1.decrement();
+counter1.decrement();
 console.log("Counter1: ", counter1.value());
 */
 
-var e = 10;
-function sum(a){
-  return function(b){
-    return function(c){
-      // outer functions scope
-      return function(d){
-        // local scope
-        return a + b + c + d + e;
-      }
+function makeCounter() {
+    var privateCounter = 0;
+    function changeBy(val) {
+        privateCounter += val;
     }
-  }
-}
-
-console.log(sum(1)(2)(3)(4)); // log 20
-
-// You can also write without anonymous functions:
-
-// global scope
-var e = 10;
-function sum(a){
-  return function sum2(b){
-    return function sum3(c){
-      // outer functions scope
-      return function sum4(d){
-        // local scope
-        return a + b + c + d + e;
-      }
+    return {
+        increment: i = () => changeBy(1),
+        decrement: d = () => changeBy(-1),
+        value: function () { return privateCounter}
     }
-  }
-}
+};
 
-var sum2 = sum(1);
-var sum3 = sum2(2);
-var sum4 = sum3(3);
-var result = sum4(4);
-console.log(result) //log 20
+var counter2 = makeCounter();
+
+counter2.increment();
+counter2.increment();
+counter2.increment();
+console.log("makeCounter: ", counter2.value());
+counter2.increment();
+console.log("makeCounter: ", counter2.value());
+counter2.decrement();
+counter2.decrement();
+counter2.decrement();
+console.log("makeCounter: ", counter2.value());
